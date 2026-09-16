@@ -44,3 +44,25 @@ Node*  Insertion_at_first(Node* head,int value)
     return head;
     
 }
+
+Node* printList(Node* head)
+{
+while(head != nullptr)
+    {
+        cout<<head->data<<" ";
+        head = head->next;
+    }
+}
+
+int main()
+{
+    vector<int> arr = {2, 3, 4};
+
+    Node* head = Linkedlist(arr);
+
+    head = Insertion_at_first(head, 1);
+
+    printList(head);
+
+    return 0;
+}
