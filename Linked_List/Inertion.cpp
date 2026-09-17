@@ -45,7 +45,7 @@ Node*  Insertion_at_first(Node* head,int value)
     
 }
 
-Node* printList(Node* head)
+void printList(Node* head)
 {
 while(head != nullptr)
     {
