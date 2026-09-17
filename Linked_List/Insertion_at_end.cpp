@@ -1,3 +1,11 @@
+/*
+Insert a node at the end of a singly linked list.
+Hint: Handle the empty-list case separately from the general case.
+Input List: 1 -> 2 -> 3, Value to insert: 4
+Output 1 -> 2 -> 3 -> 4
+*/
+
+
 #include <iostream>
 #include <vector>
 using namespace std;
