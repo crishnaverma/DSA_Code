@@ -39,6 +39,8 @@ Node* Linkedlist(vector<int>& arr)
 
 Node*  delete_first_node(Node* head,int value)
 {
+    if (head == nullptr)
+    return;
     Node* temp = head;
     head = head->next;
     delete temp;
