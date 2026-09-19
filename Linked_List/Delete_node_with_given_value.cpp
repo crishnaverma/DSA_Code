@@ -35,17 +35,27 @@ Node* Linkedlist(vector<int>& arr)
     return head;
 }
 
-int Delete_node_with_given_value(Node* head, int target)
+Node* Delete_node_with_given_value(Node* head, int target)
 {
-    
-    Node* temp = head;
-    while(temp != nullptr)
-    {
-        if(temp->next->data == target)
+    if (head == nullptr) return head;
+
+    if(head->data == target)
         {
-            delete temp->next;
+            Node* del = head;
+            head = head->next;
+            delete del;
             return head;
         }
+    Node* temp = head;
+    while(temp->next != nullptr)
+    {
+        if (temp->next->data == target)
+        {
+            Node* nodeToDelete = temp->next;
+            temp->next = temp->next->next;
+            delete nodeToDelete;
+            return head;
+        }   
         temp = temp->next;
     }
     return head;
