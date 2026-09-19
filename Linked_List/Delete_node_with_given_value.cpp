@@ -1,12 +1,9 @@
 /*
-Question:-
-Delete the first node of a linked list.
-Hint: Remember to free the memory of the removed node in C.
-Input List: 1 -> 2 -> 3 -> 4
-Output 2 -> 3 -> 4
-
+Delete a node with a given value.
+Hint: Consider what happens if the value is in the head node.
+Input List: 5 -> 3 -> 9 -> 1, Value: 9
+Output 5 -> 3 -> 1
 */
-
 
 #include <iostream>
 #include <vector>
@@ -38,15 +35,20 @@ Node* Linkedlist(vector<int>& arr)
     return head;
 }
 
-Node*  delete_first_node(Node* head,int value)
+int Delete_node_with_given_value(Node* head, int target)
 {
-    if (head == nullptr)
-    return;
-    Node* temp = head;
-    head = head->next;
-    delete temp;
-    return head;
     
+    Node* temp = head;
+    while(temp != nullptr)
+    {
+        if(temp->next->data == target)
+        {
+            delete temp->next;
+            return head;
+        }
+        temp = temp->next;
+    }
+    return head;
 }
 
 void printList(Node* head)
@@ -64,7 +66,7 @@ int main()
 
     Node* head = Linkedlist(arr);
 
-    head = delete_first_node(head, 1);
+    head = Delete_node_with_given_value(head, 2);
 
     printList(head);
 

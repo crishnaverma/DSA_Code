@@ -69,7 +69,7 @@ while(head != nullptr)
 
 int main()
 {
-    vector<int> arr = {2, 3, 4};
+    vector<int> arr = {1, 2, 3, 4};
 
     Node* head = Linkedlist(arr);
 
