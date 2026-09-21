@@ -45,7 +45,7 @@ Node* reverse(Node* head)
         prev = temp;
         temp = next;
     }
-    return head;
+    return prev;
 
 }
 
@@ -60,3 +60,19 @@ while(head != nullptr)
 }
 
 
+int main()
+{
+    vector<int> arr = {1, 2, 3, 4, 5};
+
+    Node* head = Linkedlist(arr);
+
+    cout << "Original List: ";
+    printList(head);
+
+    head = reverse(head);
+
+    cout << "\nReversed List: ";
+    printList(head);
+
+    return 0;
+}
