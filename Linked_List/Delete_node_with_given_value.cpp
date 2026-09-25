@@ -47,13 +47,13 @@ Node* Delete_node_with_given_value(Node* head, int target)
             return head;
         }
     Node* temp = head;
-    while(temp->next != nullptr)
+    while(temp != nullptr)
     {
         if (temp->next->data == target)
         {
-            Node* nodeToDelete = temp->next;
+            delete temp->next;
             temp->next = temp->next->next;
-            delete nodeToDelete;
+            //delete nodeToDelete;
             return head;
         }   
         temp = temp->next;
@@ -76,7 +76,7 @@ int main()
 
     Node* head = Linkedlist(arr);
 
-    head = Delete_node_with_given_value(head, 2);
+    head = Delete_node_with_given_value(head, 3);
 
     printList(head);
 
