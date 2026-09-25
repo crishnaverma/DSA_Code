@@ -61,6 +61,8 @@ int main()
     vector<int> arr = {1, 2, 3, 4};
 
     Node* head = Linkedlist(arr);
+    if(hasCycle)
+    cout<<"True";
 
     return 0;
 }
