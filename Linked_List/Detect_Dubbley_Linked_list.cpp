@@ -35,7 +35,7 @@ Node* Linkedlist(vector<int>& arr)
     // Create cycle: last node -> second node
     temp->next = head->next;
     head->next->prev = temp;
-
+ 
     return head;
 }
 
