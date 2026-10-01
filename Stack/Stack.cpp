@@ -1,3 +1,14 @@
+/*
+Question
+
+1. Implement a stack using an array: push with an overflow check.
+Hint: top = -1 means empty. Check top == MAX-1 before incrementing top.
+INPUT MAX = 3, push(10), push(20), push(30), push(40)
+OUTPUT push(40) rejected with Stack Overflow; stack (bottom -> top): 10 20 30
+
+*/
+
+
 #include <iostream>
 using namespace std;
 
