@@ -1,38 +1,55 @@
 #include <iostream>
 using namespace std;
 
-#define max 3
+#define MAX 3
 
 class Stack
 {
-    int arr[max];
+    int arr[MAX];
     int top;
 
 public:
-    stack()
+    Stack()
     {
-        top  = -1;
+        top = -1;
     }
 
-    void push()
+    void push(int value)
     {
-        if(top==max-1)
+        // Overflow check
+        if (top == MAX - 1)
         {
-            cout<<"Stack Overflow";
+            cout << "push(" << value << ") rejected with Stack Overflow" << endl;
             return;
         }
+
         top++;
         arr[top] = value;
     }
 
-    void peek()
+    void display()
     {
+        cout << "stack (bottom -> top): ";
 
+        for (int i = 0; i <= top; i++)
+        {
+            cout << arr[i] << " ";
+        }
+
+        cout << endl;
     }
+};
 
-    void pop()
-    {
+int main()
+{
+    Stack s;
 
-    }
+    s.push(10);
+    s.push(20);
+    s.push(30);
+    s.push(40);
+
+    s.display();
+
+    return 0;
 }
-
