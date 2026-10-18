@@ -65,7 +65,8 @@ public:
 
 int main()
 {
-    Stack s;
+    Stack s,s1;
+
     s.push(1);
     s.push(2);
     s.push(3);
