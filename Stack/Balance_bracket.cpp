@@ -46,4 +46,42 @@ bool isEmpty()
     return top == nullptr;
 }
 
-bool 
+bool isBalanced(string expression)
+{
+    while(!isEmpty())
+    pop();
+    for(char ch : expression)
+    {
+        if(ch == '(' ||ch == '{' || ch == '[')
+        {
+            push(ch);
+        }
+        else if(ch == ')' ||ch == '}' || ch == ']')
+        {
+            if(isEmpty())
+            return false;
+
+            char opening = top->data;
+
+            if((ch == ')' && opening != '(')
+             ||(ch == '}' && opening != '{')
+             ||(ch == ']' && opening != '['))
+             {
+                return false;
+             }
+             pop();
+        }
+        
+       
+    }
+    return isEmpty();
+}
+
+int main()
+{
+    cout << boolalpha;
+    cout << isBalanced("{[()]}") << endl;
+    cout << isBalanced("{[(])}") << endl;
+
+    return 0;
+}
