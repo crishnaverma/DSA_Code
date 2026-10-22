@@ -45,3 +45,5 @@ bool isEmpty()
 {
     return top == nullptr;
 }
+
+bool 
