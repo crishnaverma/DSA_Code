@@ -68,6 +68,19 @@ void inorder(Node* root)
     preorder(root->right);
 }
 
+//Postorder
+
+void postorder(Node* root)
+{
+
+    if(root == nullptr)
+    return;
+
+    postorder(root->left);
+    postorder(root->right);
+    cout<<root->data<<endl;
+}
+
 
 int main() {
     int arr[] = {1, 2, -1, -1, 3, -1, -1};
@@ -76,5 +89,7 @@ int main() {
     preorder(root);
     cout<<"Inorder"<<endl;
     inorder(root);
+    cout<<"Postorder"<<endl;
+    postorder(root);
     return 0;
 }
