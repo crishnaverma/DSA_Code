@@ -64,6 +64,16 @@ void inorder(Node* root)
     inorder(root->right);
 }
 
+Node* InOrderSucessor(Node* root)
+{
+    while(root->right != NULL && root->left !=NULL)
+    {
+        root = root->right;
+    }
+    return root;
+}
+
+
 Node *delNode(Node* root, int key)
 {
     if(root == nullptr)
