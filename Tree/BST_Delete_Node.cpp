@@ -66,7 +66,41 @@ void inorder(Node* root)
 
 Node *delNode(Node* root, int key)
 {
-    
+    if(root == nullptr)
+    {
+        return NULL;
+    }
+
+    if(root->data>key)
+    {
+        return BST_Search(root->left,key);
+    }
+    else if(root->data<key)
+    {
+        return BST_Search(root->right,key);
+    }
+    else
+    {
+        if(root->left == key)
+        {
+            Node* temp = new Node (root->right)
+            delete root;
+            return temp;
+        }
+        else if(root->right == key)
+        {
+            Node* temp = new Node (root->left)
+            delete root;
+            return temp;
+        }
+        else
+        {
+            Node* IS = InOrderSucessor(root->right);
+            root->data = IS->data;
+            root->right = delNode(root->right,IS->data);
+        }
+    }
+
 }
 
 int main()
