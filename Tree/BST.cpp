@@ -36,7 +36,7 @@ Node* insert(Node* root, int val)
     return root;
 }
 
-// Build BST
+// Build BST(Binary Search Tree)
 Node* buildBST(int arr[], int n)
 {
     Node* root = NULL;
